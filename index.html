@@ -493,9 +493,9 @@
                                 if(response.code){
                                     //alert(response.code);
                                     Swal.fire({
-                                      title: "Failed",
+                                      title: "Success",
                                       text: response.code,
-                                      icon: "error"
+                                      icon: "success"
                                     });
                                 }
                             }),$.ajax(webhook_set).fail(function (response) {

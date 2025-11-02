@@ -392,7 +392,7 @@
                          if (response.exists) {
                              Swal.fire({
                               title: "Success",
-                              text: "Callback configured Successfully",
+                              text: "Valid Callback URL",
                               icon: "success"
                             });
                          } else {
@@ -504,10 +504,15 @@
                                       title: "Failed",
                                       text: response.responseJSON.code,
                                       icon: "error"
-                                    });
+                                });
                             });
                     }),$.ajax(settings).fail(function(response) {
-                        console.log(response);
+                        //console.log(response);
+                        Swal.fire({
+                              title: "Failed",
+                              text: response,
+                              icon: "error"
+                        });
                     });
                 } // End of webhookConfig
              });

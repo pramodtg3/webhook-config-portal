@@ -491,10 +491,20 @@
                         };
                             $.ajax(webhook_set).done(function (response) {
                                 if(response.code){
-                                    alert(response.code);
+                                    //alert(response.code);
+                                    Swal.fire({
+                                      title: "Failed",
+                                      text: response.code,
+                                      icon: "error"
+                                    });
                                 }
                             }),$.ajax(webhook_set).fail(function (response) {
-                                alert(response.responseJSON.code);
+                                //alert(response.responseJSON.code);
+                                Swal.fire({
+                                      title: "Failed",
+                                      text: response.responseJSON.code,
+                                      icon: "error"
+                                    });
                             });
                     }),$.ajax(settings).fail(function(response) {
                         console.log(response);
